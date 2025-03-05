@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Shopping Cart - Vibees</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        function loadCart() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let cartContainer = document.getElementById('cart-items');
+            let totalPrice = 0;
+
+            cartContainer.innerHTML = ""; // Clear previous content
+
+            if (cartItems.length === 0) {
+                cartContainer.innerHTML = "<p class='text-center text-gray-600'>Your cart is empty.</p>";
+                document.getElementById('total-price').innerText = "0.00";
+                return;
+            }
+
+            cartItems.forEach((item, index) => {
+                totalPrice += item.price;
+
+                let itemElement = document.createElement('div');
+                itemElement.classList = "flex justify-between items-center p-4 border-b";
+                itemElement.innerHTML = `
+                    <span>${item.name} - ₹${item.price.toFixed(2)}</span>
+                    <button onclick="removeItem(${index})" class="text-red-500">Remove</button>
+                `;
+                cartContainer.appendChild(itemElement);
+            });
+
+            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+        }
+
+        function removeItem(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            loadCart();
+        }
+
+        function placeOrder() {
+            alert("Your order has been placed successfully!");
+            localStorage.removeItem('cartItems');
+            loadCart();
+        }
+
+        window.onload = loadCart;
+    </script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-black text-white py-4 text-center">
+        <h1 class="text-2xl font-bold">Your Shopping Cart</h1>
+    </header>
+
+    <main class="container mx-auto p-6 bg-white shadow-md mt-6">
+        <h2 class="text-xl font-semibold mb-4">Cart Items</h2>
+        <div id="cart-items" class="mb-6"></div>
+        
+        <div class="flex justify-between items-center p-4 bg-gray-200">
+            <span class="font-bold">Total Price: ₹<span id="total-price">0.00</span></span>
+            <button onclick="placeOrder()" class="bg-green-500 text-white px-4 py-2 rounded">Place Order</button>
+        </div>
+    </main>
+</body>
+</html>

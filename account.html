@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Dashboard</title>
+    <link rel="stylesheet" href="acc_styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Overview</h2>
+            <ul>
+                <li><i class="fas fa-box"></i> My Orders</li>
+                <li><i class="fas fa-credit-card"></i> My Payments</li>
+                <li><i class="fas fa-wallet"></i> My Wallet</li>
+                <li><i class="fas fa-map-marker-alt"></i> My Addresses</li>
+                <li><i class="fas fa-user"></i> My Profile</li>
+                <li class="logout"><i class="fas fa-sign-out-alt"></i> Logout</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="top-section">
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <img src="profile-pic.jpg" alt="User">
+                        <div>
+                            <h3>Vaibhav</h3>
+                            <p>vaibhavgp@gmail.com</p>
+                            <p>9019552526</p>
+                        </div>
+                    </div>
+                    <button class="edit-btn">Edit Profile</button>
+                </div>
+                <div class="membership-card">
+                    <h3>VIBEES</h3>
+                    <p>Upgrade to the premium experience now</p>
+                    <button class="membership-btn">Get our Membership</button>
+                </div>
+            </div>
+
+            <!-- Dashboard Cards -->
+            <div class="dashboard">
+                <div class="card"><i class="fas fa-box"></i> My Orders</div>
+                <div class="card"><i class="fas fa-credit-card"></i> My Payments</div>
+                <div class="card"><i class="fas fa-wallet"></i> My Wallet</div>
+                <div class="card"><i class="fas fa-map-marker-alt"></i> My Addresses</div>
+                <div class="card"><i class="fas fa-user"></i> My Profile</div>
+                <div class="card"><i class="fas fa-headset"></i> Help & Support</div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
