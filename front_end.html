@@ -24,7 +24,7 @@
     <header class="bg-black text-white">
         <div class="container mx-auto flex justify-between items-center py-6 px-6">
             <div class="flex items-center">
-                <img alt="Vibees logo" class="mr-4" height="40" src="C:\Users\Jayadeva M R\Downloads\WhatsApp Image 2025-03-05 at 15.41.41.jpeg" width="100"/>
+                <img alt="Vibees logo" class="mr-4" height="40" src="Vibees.jpeg" width="100"/>
                 <div class="text-white font-bold">Vibees</div>
             </div>
             <div class="flex-grow mx-4">
@@ -40,7 +40,7 @@
                         <span>SIGN IN</span>
                     </div>
                 </div>
-                <div class="flex items-center space-x-2 relative">
+                <div class="flex items-center space-x-2 relative" onclick="location.href='cart.html'">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-counter" id="cart-count">0</span>
                 </div>
@@ -49,9 +49,9 @@
         <nav class="bg-black text-white">
             <div class="container mx-auto flex justify-between items-center py-2 px-6">
                 <a class="hover:underline" href="groceries.html">GROCERY</a>
-                <a class="hover:underline" href="#">FRUITS &amp; VEGETABLES</a>
-                <a class="hover:underline" href="#">NEW &amp; SEASONAL</a>
-                <a class="hover:underline" href="#">FLYERS &amp; DEALS</a>
+                <a class="hover:underline" href="fruits_vegetables.html">FRUITS &amp; VEGETABLES</a>
+                <a class="hover:underline" href="new_seasonal.html">NEW &amp; SEASONAL</a>
+                <a class="hover:underline" href="flyer_deals.html">FLYERS &amp; DEALS</a>
             </div>
         </nav>
     </header>
@@ -151,16 +151,16 @@
         <body>
             <section class="banner">
                 <div class="floating-items">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Carrot_icon.svg" alt="Carrot">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Apple_icon.svg" alt="Apple">
+                    <img src="C:\Users\Jayadeva M R\Downloads\HackRon_CodeStorm\template\carrot-01-removebg-preview.png" alt="Carrot">
+                    <img src="C:\Users\Jayadeva M R\Downloads\HackRon_CodeStorm\template\organic-fresh-apple-fruit-1-kg-2226818126-zslia1l5-removebg-preview.png" alt="Apple">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Banana_icon.svg" alt="Banana">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Broccoli_icon.svg" alt="Broccoli">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Tomato_icon.svg" alt="Tomato">
+                    <img src="C:\Users\Jayadeva M R\Downloads\HackRon_CodeStorm\template\What_to_do_with_broccoli-1-1024x768-removebg-preview.png" alt="Broccoli">
+                    <img src="C:\Users\Jayadeva M R\Downloads\HackRon_CodeStorm\template\tomatoes-canva-removebg-preview.png" alt="Tomato">
                 </div>
                 <div class="content">
-                    <h1>🥦 FRESH GROCERY DEALS! 🍎</h1>
+                    <h1>FRESH GROCERY DEALS!</h1>
                     <p>Get the best discounts on fresh produce and essentials.</p>
-                    <button class="shop-btn">Shop Now</button>
+                    <button class="shop-btn" onclick="scrollToCategories()">Shop Now</button>
                 </div>
             </section>
         </body>
@@ -239,7 +239,7 @@
         function addToCart(price, productName) {
             cartCount++;
             document.getElementById('cart-count').innerText = cartCount;
-            alert(Added to cart: ${productName} for ₹${price});
+            alert(`Added to cart: ${productName} for ₹${price}`);
         }
     </script>
 </body>
@@ -250,30 +250,38 @@
             <div class="container mx-auto">
                 <h2 class="text-3xl font-bold mb-4">Shop Categories</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="new_seasonal.html">
                     <div class="relative">
                         <img alt="New Arrivals" class="w-full h-48 object-cover rounded" src="https://media.istockphoto.com/id/1360514921/vector/new-arrival-product-banner-design.jpg?s=612x612&w=0&k=20&c=Yp-I_BX1XINCJFtxIxV8XOd8MMIKtt6sLRQXBFYCKH4="/>
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
                             <h3 class="text-white text-2xl font-bold">New Arrivals</h3>
                         </div>
                     </div>
+                    </a>
+                    <a href="fruits_vegetables.html">
                     <div class="relative">
                         <img alt="Fruits and Vegetables" class="w-full h-48 object-cover rounded" src="https://domf5oio6qrcr.cloudfront.net/medialibrary/11499/3b360279-8b43-40f3-9b11-604749128187.jpg"/>
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
                             <h3 class="text-white text-2xl font-bold">Fruits and Vegetables</h3>
                         </div>
                     </div>
+                    </a>
+                    <a href="flyer_deals.html">
                     <div class="relative">
                         <img alt="Meat" class="w-full h-48 object-cover rounded" src="https://www.redefinemeat.com/wp-content/uploads/2022/04/BLOG1.jpg"/>
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
-                            <h3 hite tclass="text-wext-2xl font-bold">Meat</h3>
+                            <h3 class="text-white text-2xl font-bold">Meat</h3>
                         </div>
                     </div>
+                    </a>
+                    <a href="flyer_deals.html">
                     <div class="relative">
                         <img alt="Dairy and Eggs" class="w-full h-48 object-cover rounded" src="https://media.istockphoto.com/id/177360383/photo/cheese-bread-milk-and-eggs.jpg?s=612x612&w=0&k=20&c=8LN01R9z5tnalaOCj9rHhN_ut7bN3KBOBS-cVEDGVi8="/>
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
                             <h3 class="text-white text-2xl font-bold">Dairy &amp; Eggs</h3>
                         </div>
                     </div>
+                    </a>
                     <div class="relative">
                         <img alt="Bakery" class="w-full h-48 object-cover rounded" src="https://etimg.etb2bimg.com/photo/92271034.cms"/>
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
@@ -289,6 +297,14 @@
                 </div>
             </div>
         </section>
+    </main>
+    <script>
+        function scrollToCategories() {
+            document.querySelector('.bg-white').scrollIntoView({ behavior:'smooth' });
+        }
+    </script>
+</body>
+</html>
         <!-- Offers -->
         <section class="bg-white py-16">
             <div class="container mx-auto">
@@ -341,11 +357,11 @@
                 <div class="flex justify-center space-x-4">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-phone-alt"></i>
-                        <span>+1 234 567 890</span>
+                        <span>+91 98745 63210</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>1234 Market St, San Francisco, CA 94103</span>
+                        <span>Airport Road, Lohegaon, Pune, Maharashtra</span>
                     </div>
                 </div>
             </div>
@@ -361,5 +377,5 @@
         function addToCart(price) {
             cartCount++;
             $('#cart-count').text(cartCount);
-            alert(Added to cart: ₹${price});
+            alert(`Added to cart: ₹${price}`);
         }
