@@ -11,7 +11,7 @@
             position: absolute;
             top: -10px;
             right: -10px;
-            background-color: red;
+            background-color: rgb(0, 119, 255);
             color: white;
             border-radius: 50%;
             padding: 2px 6px;
@@ -19,10 +19,10 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-200">
     <!-- Header -->
     <header class="bg-black text-white">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center py-6 px-6">
             <div class="flex items-center">
                 <img alt="Vibees logo" class="mr-4" height="40" src="C:\Users\Jayadeva M R\Downloads\WhatsApp Image 2025-03-05 at 15.41.41.jpeg" width="100"/>
                 <div class="text-white font-bold">Vibees</div>
@@ -40,7 +40,7 @@
                         <span>SIGN IN</span>
                     </div>
                 </div>
-                <div class="flex items-center space-x-2 relative" onclick="location.href='cart.html'">
+                <div class="flex items-center space-x-2 relative">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-counter" id="cart-count">0</span>
                 </div>
@@ -49,113 +49,202 @@
         <nav class="bg-black text-white">
             <div class="container mx-auto flex justify-between items-center py-2 px-6">
                 <a class="hover:underline" href="groceries.html">GROCERY</a>
-                <a class="hover:underline" href="fruits_vegetables.html">FRUITS &amp; VEGETABLES</a>
-                <a class="hover:underline" href="new_seasonal.html">NEW &amp; SEASONAL</a>
-                <a class="hover:underline" href="flyer_deals.html">FLYERS &amp; DEALS</a>
+                <a class="hover:underline" href="#">FRUITS &amp; VEGETABLES</a>
+                <a class="hover:underline" href="#">NEW &amp; SEASONAL</a>
+                <a class="hover:underline" href="#">FLYERS &amp; DEALS</a>
             </div>
         </nav>
     </header>
     <!-- Main Content -->
     <main>
-        <!-- Banner -->
-        <section class="bg-yellow-400 text-center py-16">
-            <div class="container mx-auto">
-                <div class="flex justify-between items-center">
-                    <button class="text-2xl">&lt;</button>
-                    <div>
-                        <h1 class="text-4xl font-bold">OFFER IS ON !!!</h1>
-                        <p class="text-lg">Your favourite brands for less >>>
-                           hurry up!!! 50% off on below items
-                        </p>
-                        <button class="mt-4 px-6 py-2 bg-white text-black rounded">Shop all</button>
-                    </div>
-                    <button class="text-2xl">&gt;</button>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E-Commerce Offer Banner</title>
+            <style>
+                body {
+                    margin: 0;
+                    font-family: 'Poppins', sans-serif;
+                }
+                .banner {
+                    background: linear-gradient(135deg, #ffcc00, #ff6600);
+                    text-align: center;
+                    padding: 100px 20px;
+                    position: relative;
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                }
+                .floating-items {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    pointer-events: none;
+                }
+                .floating-items img {
+                    position: absolute;
+                    width: 80px;
+                    opacity: 0.7;
+                    animation: float 6s infinite ease-in-out;
+                }
+                .floating-items img:nth-child(1) { top: 10%; left: 15%; animation-duration: 5s; }
+                .floating-items img:nth-child(2) { top: 40%; left: 80%; animation-duration: 7s; }
+                .floating-items img:nth-child(3) { top: 70%; left: 50%; animation-duration: 6s; }
+                .floating-items img:nth-child(4) { top: 20%; left: 60%; animation-duration: 8s; }
+                .floating-items img:nth-child(5) { top: 80%; left: 20%; animation-duration: 5.5s; }
+                
+                @keyframes float {
+                    0% { transform: translateY(0); }
+                    50% { transform: translateY(-20px); }
+                    100% { transform: translateY(0); }
+                }
+                
+                .content {
+                    position: relative;
+                    z-index: 1;
+                }
+                .banner h1 {
+                    font-size: 4rem;
+                    font-weight: bold;
+                    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+                    animation: fadeIn 1.5s ease-in-out;
+                }
+                .banner p {
+                    font-size: 1.6rem;
+                    margin-top: 10px;
+                    animation: slideIn 1.5s ease-in-out;
+                }
+                .shop-btn {
+                    margin-top: 20px;
+                    padding: 14px 28px;
+                    background: #28a745;
+                    color: white;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    border: none;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    transition: transform 0.3s, background 0.3s;
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                }
+                .shop-btn:hover {
+                    background: #218838;
+                    transform: scale(1.1);
+                }
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes slideIn {
+                    from { transform: translateY(20px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
+            </style>
+        </head>
+        <body>
+            <section class="banner">
+                <div class="floating-items">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Carrot_icon.svg" alt="Carrot">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Apple_icon.svg" alt="Apple">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Banana_icon.svg" alt="Banana">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Broccoli_icon.svg" alt="Broccoli">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Tomato_icon.svg" alt="Tomato">
                 </div>
-            </div>
-        </section>
+                <div class="content">
+                    <h1>🥦 FRESH GROCERY DEALS! 🍎</h1>
+                    <p>Get the best discounts on fresh produce and essentials.</p>
+                    <button class="shop-btn">Shop Now</button>
+                </div>
+            </section>
+        </body>
+        </html>
+        
+            
         <!-- Start Shopping -->
         <section class="bg-white py-16">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-4">Start shopping</h2>
+                <h2 class="text-4xl font-bold mb-4">Start shopping <text-yellow></text-yellow></h2>
                 <p class="text-lg mb-8">Get started shopping with these items
                   with 50% off on all items. Hurry up!
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Product 1 -->
                     <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
                         <img alt="Bananas" class="mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/VekPPyps7xxLfUn2evGafvaHHPXFlpuwLE05YMOVXqI.jpg" width="50"/>
                         <h3 class="font-bold">Bananas Bunch</h3>
-                        <p>₹174.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(174)">Add to Cart</button>
+                        <p>Original Price: <span class="line-through">₹174.00</span></p>
+                        <p>Discounted Price: <span class="discount">₹87.00</span></p>
+                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(87, 'Bananas Bunch')">Add to Cart</button>
                     </div>
+                    <!-- Product 2 -->
                     <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
                         <img alt="Large Grade A Eggs" class="mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/yTbfk1ttPIH6MSh6YhWmE8FVDZeiAwoLC6iU2YcQR2E.jpg" width="50"/>
                         <h3 class="font-bold">Large Grade A Eggs</h3>
-                        <p>₹370.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(370)">Add to Cart</button>
+                        <p>Original Price: <span class="line-through">₹370.00</span></p>
+                        <p>Discounted Price: <span class="discount">₹185.00</span></p>
+                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(185, 'Large Grade A Eggs')">Add to Cart</button>
                     </div>
+                    <!-- Product 3 -->
                     <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
                         <img alt="Gourmet West Coast Dark Roast Fine Grind Coffee" class="mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/9gaSL-91Lk2fvH21FbGr3QVzaz8bOon8ovU2pweJqm8.jpg" width="50"/>
                         <h3 class="font-bold">Gourmet West Coast Dark Roast Fine Grind Coffee</h3>
-                        <p>₹370.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(370)">Add to Cart</button>
+                        <p>Original Price: <span class="line-through">₹370.00</span></p>
+                        <p>Discounted Price: <span class="discount">₹185.00</span></p>
+                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(185, 'Gourmet Coffee')">Add to Cart</button>
                     </div>
+                    <!-- Product 4 -->
                     <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
                         <img alt="Extra Large Green Seedless Grapes" class="mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/IKLn1DvnzkSRDajutVUdrTicWHnbus5lub7FUKVF3Uk.jpg" width="50"/>
                         <h3 class="font-bold">Extra Large Green Seedless Grapes</h3>
-                        <p>₹782.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(782)">Add to Cart</button>
+                        <p>Original Price: <span class="line-through">₹782.00</span></p>
+                        <p>Discounted Price: <span class="discount">₹391.00</span></p>
+                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(391, 'Green Seedless Grapes')">Add to Cart</button>
                     </div>
+                    <!-- Product 5 -->
                     <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
                         <img alt="White Baguette" class="mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/rtQz2xXW57VKgq4hOswRmxNAr2EmQT0Q6Cu2q4UbJiU.jpg" width="50"/>
                         <h3 class="font-bold">White Baguette</h3>
-                        <p>₹300.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(300)">Add to Cart</button>
+                        <p>Original Price: <span class="line-through">₹300.00</span></p>
+                        <p>Discounted Price: <span class="discount">₹150.00</span></p>
+                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(150, 'White Baguette')">Add to Cart</button>
                     </div>
+                    <!-- Product 6 -->
                     <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
                         <img alt="Boneless Skinless Chicken Breasts" class="mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/XAHzpkAeCcoOoY1U1p6l9o-DzxL6w26NTj0ApxE2jj4.jpg" width="50"/>
                         <h3 class="font-bold">Boneless Skinless Chicken Breasts</h3>
-                        <p>₹500.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(500)">Add to Cart</button>
+                        <p>Original Price: <span class="line-through">₹500.00</span></p>
+                        <p>Discounted Price: <span class="discount">₹250.00</span></p>
+                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(250, 'Boneless Chicken Breasts')">Add to Cart</button>
                     </div>
-                    <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
-                        <img alt="Olives" class="mb-2" height="50" src="https://www.thespruceeats.com/thmb/JX-Ik1jghLnbGAknB7eNlP_8KVo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/greenolives-5a85e5dfa18d9e0037a56ce5.jpg" width="50"/>
-                        <h3 class="font-bold">Olives</h3>
-                        <p>₹350.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(350)">Add to Cart</button>
-                    </div>
-                    <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
-                        <img alt="Tomato Sauce" class="mb-2" height="50" src="https://www.kitchentreaty.com/wp-content/uploads/2014/10/fresh-tomato-pizza-sauce-square.jpg" width="50"/>
-                        <h3 class="font-bold">Tomato Sauce</h3>
-                        <p>₹160.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(160)">Add to Cart</button>
-                    </div>
-                    <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
-                        <img alt="Peanuts" class="mb-2" height="50" src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FPhoto%2FRecipes%2F2024-04-roasted-peanuts%2Froasted-peanuts-061" width="50"/>
-                        <h3 class="font-bold">Peanuts</h3>
-                        <p>₹120.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(120)">Add to Cart</button>
-                    </div>
-                    <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
-                        <img alt="Flour" class="mb-2" height="50" src="https://www.kingarthurbaking.com/sites/default/files/2020-12/homemade-self-rising-flour_1118.jpg" width="50"/>
-                        <h3 class="font-bold">Flour</h3>
-                        <p>₹78.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(78)">Add to Cart</button>
-                    </div>
-                    <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
-                        <img alt="Cold Beverages" class="mb-2" height="50" src="https://i.redd.it/yyr6vtruhzbb1.jpg" width="50"/>
-                        <h3 class="font-bold">Cold Beverages</h3>
-                        <p>₹25.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(25)">Add to Cart</button>
-                    </div>
-                    <div class="flex flex-col items-center justify-between p-4 bg-gray-100 rounded">
-                        <img alt="Ice Cream" class="mb-2" height="50" src="https://static.toiimg.com/thumb/msid-112019658,width-1280,height-720,resizemode-4/112019658.jpg" width="50"/>
-                        <h3 class="font-bold">Ice Cream</h3>
-                        <p>₹55.00</p>
-                        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded" onclick="addToCart(55)">Add to Cart</button>
+                    <!-- Additional products can be added here following the same structure -->
+                </div>
+            </div>
+        </section>
+   
                     </div>
                 </div>
             </div>
         </section>
+    </main>
+    <script>
+        let CartCount = 0;
+    
+        function addToCart(price, productName) {
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            alert(Added to cart: ${productName} for ₹${price});
+        }
+    </script>
+</body>
+</html>
+
         <!-- Shop Categories -->
         <section class="bg-white py-16">
             <div class="container mx-auto">
@@ -176,7 +265,7 @@
                     <div class="relative">
                         <img alt="Meat" class="w-full h-48 object-cover rounded" src="https://www.redefinemeat.com/wp-content/uploads/2022/04/BLOG1.jpg"/>
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
-                            <h3 class="text-white text-2xl font-bold">Meat</h3>
+                            <h3 hite tclass="text-wext-2xl font-bold">Meat</h3>
                         </div>
                     </div>
                     <div class="relative">
@@ -252,24 +341,25 @@
                 <div class="flex justify-center space-x-4">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-phone-alt"></i>
-                        <span>+91 98765 43210</span>
+                        <span>+1 234 567 890</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Airport Road, Lohegaon, Pune, Maharashtra</span>
+                        <span>1234 Market St, San Francisco, CA 94103</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-7v9yf5JXQ1v4A0w3z3z1                                          
+        crossorigin="anonymous"></script>
     <script>
         let cartCount = 0;
-
+    
         function addToCart(price) {
             cartCount++;
-            document.getElementById('cart-count').innerText = cartCount;
-            alert('Added to cart: ₹${price}');
+            $('#cart-count').text(cartCount);
+            alert(Added to cart: ₹${price});
         }
-    </script>
-</body>
-</html>
